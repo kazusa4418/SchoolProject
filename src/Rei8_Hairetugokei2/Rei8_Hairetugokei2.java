@@ -6,6 +6,6 @@ public class Rei8_Hairetugokei2 {
         HairetuGokei2 gk2 = new HairetuGokei2();
 
         gk2.yosoGokeiToLead(arrayTensu2);
-        System.out.println("配列お要素の合計は" + arrayTensu2[0]);
+        System.out.println("配列の要素の合計は" + arrayTensu2[0]);
     }
 }

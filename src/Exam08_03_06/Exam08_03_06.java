@@ -9,12 +9,11 @@ public class Exam08_03_06 {
         System.out.print("“_”‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢ > ");
         int score = sc.nextInt();
 
-        if (new Check().checkNumber(score) == 1) {
+        if (new Check().checkNumber(score) == 1)
             System.out.println("”ÍˆÍŠO‚Å‚·");
-            System.exit(1);
+        else {
+            char result = new Test().judge(score);
+            System.out.println("•]‰¿‚Í" + result + "‚Å‚·");
         }
-
-        char result = new Test().judge(score);
-        System.out.println("•]‰¿‚Í" + result + "‚Å‚·");
     }
 }
