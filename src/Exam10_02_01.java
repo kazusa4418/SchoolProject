@@ -22,8 +22,7 @@ public class Exam10_02_01 {
                 if (s.isEmpty()) {
                     break;
                 }
-                s = s + "\n";
-                fw.write(s);
+                fw.write(s + "\n");
                 fw.flush();
                 i++;
             }
