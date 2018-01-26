@@ -20,4 +20,9 @@ public class KeyIn {
         }
         return s;
     }
+
+    public int readInt(String text) {
+        String s = readString(text);
+        return Integer.parseInt(s);
+    }
 }
