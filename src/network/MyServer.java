@@ -17,8 +17,12 @@ class MyServerSocket {
     MyServerSocket() {
         try {
             server = new ServerSocket(22567);
-            socket = server.accept();
-            socket.close();
+
+            while (true) {
+                socket = server.accept();
+                System.out.println("Accepted");
+                socket.close();
+            }
         }
         catch (IOException e) {
             e.printStackTrace();
