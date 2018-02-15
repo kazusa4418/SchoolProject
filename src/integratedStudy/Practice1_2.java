@@ -5,48 +5,30 @@ import keyin.KeyIn;
 public class Practice1_2 {
     public static void main(String[] args) {
         KeyIn ki = new KeyIn();
-        int degree;
-        int i;
-        int j;
 
-        degree = ki.readInt("奇数の魔法陣: ");
+        int degree = ki.readInt("奇数の魔法陣: ");
         if (degree < 0 || degree % 2 == 0) {
             System.err.println("エラーです");
-            System.exit(1);
         }
         else {
             int[][] magicSquare = new int[degree][degree];
-            i = 0;
-            j = degree / 2;
+            int i = 0;
+            int j = degree / 2;
             magicSquare[i][j] = 1;
-            int k = 2;
 
-            while (k <= Math.pow(degree, 2)) {
+            for (int k = 2; k <= Math.pow(degree, 2); k++ ) {
                 if (k % degree == 1) {
                     i++;
                 }
                 else {
-                    if (i == 0) {
-                        i = degree - 1;
-                        j++;
-                    }
-                    else {
-                        if (j == degree - 1) {
-                            i--;
-                            j = 0;
-                        }
-                        else {
-                            i--;
-                            j++;
-                        }
-                    }
+                    j = (i == 0 || !(j == degree - 1)) ? ++j : 0;
+                    i = (i == 0) ? degree - 1 : --i;
                 }
                 magicSquare[i][j] = k;
-                k++;
             }
-            for (int l = 0; l < magicSquare.length; l++ ) {
-                for (int m = 0; m < magicSquare[l].length; m++ ) {
-                    System.out.print(magicSquare[l][m] + "\t");
+            for (int[] aMagicSquare : magicSquare) {
+                for (int square : aMagicSquare) {
+                    System.out.print(square + "\t");
                 }
                 System.out.println();
             }

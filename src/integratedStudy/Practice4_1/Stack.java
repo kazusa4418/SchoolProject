@@ -1,9 +1,11 @@
-package integratedStudy;
+package integratedStudy.Practice4_1;
 
 class Stack<E> {
     private Object[] objects;
-    private int sp = 0;
+    private int sp = -1;
+
     private static final int DEFAULT_STACK_SIZE = 10;
+    private static final int STACK_EMPTY = -1;
 
     Stack() {
         objects = new Object[DEFAULT_STACK_SIZE];
@@ -14,19 +16,19 @@ class Stack<E> {
     }
 
     public void push(E data) {
-        objects[sp] = data;
         sp++;
+        objects[sp] = data;
     }
 
     @SuppressWarnings("unchecked")
     public E pop() {
-        Object o = objects[sp - 1];
+        Object o = objects[sp];
         sp--;
         return (E) o;
     }
 
     public void show() {
-        for (int i = sp - 1; i >= 0; i-- )
+        for (int i = sp; i >= 0; i-- )
             System.out.println("[" + i + "] " + objects[i]);
     }
 
@@ -34,15 +36,19 @@ class Stack<E> {
         return objects.length;
     }
 
-    public int getSP() {
+    private int getSP() {
         return sp;
     }
 
+    public boolean isEmpty() {
+        return getSP() == STACK_EMPTY;
+    }
+
     public boolean canPush() {
-        return size() > getSP();
+        return size() - 1 > getSP();
     }
 
     public boolean canPop() {
-        return getSP() > 0;
+        return getSP() > STACK_EMPTY;
     }
 }

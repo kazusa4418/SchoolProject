@@ -5,13 +5,12 @@ public class Practice3_1 {
         int[] arrayScode = { 102, 800, 201, 101, 283, 430, 181, 550 };
         String[] arraySname = { "––±Š÷BŒ^", "‰ÚŠ÷", "‰ï‹c—pŠ÷", "––±Š÷AŒ^"
                                 , "Ü‚èô‚İŠ÷", "–Ø»Š÷", "˜eŠ÷", "Šw¶Š÷" };
-        int i, j;
         int tempCode;
         String tempName;
 
-        i = 0;
+        int i = 0;
         while (i < (arrayScode.length - 1)) {
-            j = i + 1;
+            int j = i + 1;
 
             while (j < arrayScode.length) {
                 if (arrayScode[i] > arrayScode[j]) {

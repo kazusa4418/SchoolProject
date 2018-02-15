@@ -1,4 +1,4 @@
-package integratedStudy;
+package integratedStudy.Practice4_1;
 
 import java.util.Scanner;
 
@@ -22,6 +22,7 @@ public class Practice4_1 {
             select();
         }
     }
+
     private void select() {
         System.out.print("種別(0:表示, 1:push, 2:pop) :> ");
         int in = sc.nextInt();
@@ -32,7 +33,7 @@ public class Practice4_1 {
                 flag = false;
                 break;
             case 0:
-                if (stack.getSP() == 0) {
+                if (stack.isEmpty()) {
                     System.out.println("スタックされていません");
                 }
                 else {
@@ -55,6 +56,9 @@ public class Practice4_1 {
                 else {
                     System.out.println("スタックされていません");
                 }
+                break;
+            default:
+                System.out.println("種別の入力エラーです");
                 break;
         }
     }
