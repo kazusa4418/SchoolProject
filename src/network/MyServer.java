@@ -21,8 +21,18 @@ class MyServerSocket {
 
     MyServerSocket() {
         try {
+<<<<<<< HEAD
+            server = new ServerSocket(22567);
+
+            while (true) {
+                socket = server.accept();
+                System.out.println("Accepted");
+                socket.close();
+            }
+=======
             server = new ServerSocket(55555);
 
+<<<<<<< HEAD
             while (true) {
                 socket = server.accept();
                 bw = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -32,6 +42,11 @@ class MyServerSocket {
             //bw.close();
             //socket.close();
 
+=======
+            bw.close();
+            socket.close();
+>>>>>>> 24746f8cc4da97e995b2356b7f883654a7b9c074
+>>>>>>> origin/master
         }
         catch (IOException e) {
             System.out.println(e.toString());
